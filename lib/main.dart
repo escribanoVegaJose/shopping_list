@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xffedecee),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: MyHomePage(),
     );
   }
 }
