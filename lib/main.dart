@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/MainScreens/homeScreen.dart';
+import 'package:shopping_list/MainScreens/login/welcomeScreen.dart';
 import 'package:shopping_list/Utils/AssetsImages.dart';
 import 'package:shopping_list/Utils/ConstantsApp.dart';
 import 'package:shopping_list/Utils/TextApp.dart';
+import 'package:shopping_list/Widgets/Design/DesignWidgets.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
         primaryColorDark: Color(0xff050028),
         primaryColorLight: Color(0xff57547c),
         accentColor: Color(0xffedecee),
+        textTheme:
+            TextTheme(bodyText1: TextStyle(fontSize: 14, color: Colors.white)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -33,14 +36,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-      seconds: ConstantsAPP.TIME_SPLASH_SCREEN,
-      navigateAfterSeconds: HomeScreen(),
-      image: AssetsImages.ImageLogo(),
-      backgroundColor: Colors.white,
-      photoSize: 100,
-      loaderColor: Theme.of(context).primaryColor,
-      loadingText: Text(TextApp.LOADING),
+    return Center(
+      child: SplashScreen(
+        seconds: ConstantsAPP.TIME_SPLASH_SCREEN,
+        navigateAfterSeconds: WelcomeScreen(),
+        image: AssetsImages.ImageLogo(),
+        photoSize: 120,
+        loaderColor: Theme.of(context).accentColor,
+        loadingText: Text(
+          TextApp.LOADING,
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        gradientBackground: DesignWidgets.linearGradientMain(context),
+      ),
     );
   }
 }
