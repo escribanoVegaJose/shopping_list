@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MyFieldForm extends StatelessWidget {
-  String _tittle;
-  bool _isPassword;
+  final String tittle;
+  final bool isPassword;
 
-  MyFieldForm(this._tittle, this._isPassword);
+  MyFieldForm({this.tittle, this.isPassword = false});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,13 +14,13 @@ class MyFieldForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            _tittle,
+            tittle,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: TextField(
-                obscureText: _isPassword,
+                obscureText: isPassword,
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     fillColor: Color(0xfff3f3f4),

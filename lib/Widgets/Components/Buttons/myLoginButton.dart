@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MyLoginButton extends StatelessWidget {
-  String _text;
-  Color _colorText;
-  Color _colorButtonBackground;
-  Widget _widgetToNavigate;
-  MyLoginButton(this._text, this._colorText, this._colorButtonBackground,
-      this._widgetToNavigate);
+  final String text;
+  final Color colorText;
+  final Color colorButtonBackground;
+  final Widget widgetToNavigate;
+  MyLoginButton(
+      {this.text,
+      this.colorText,
+      this.colorButtonBackground,
+      this.widgetToNavigate});
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +19,17 @@ class MyLoginButton extends StatelessWidget {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => _widgetToNavigate)),
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => widgetToNavigate)),
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
         ),
-        color: _colorButtonBackground,
+        color: colorButtonBackground,
         child: Text(
-          _text,
+          text,
           style: TextStyle(
-              color: _colorText,
+              color: colorText,
               letterSpacing: 1.5,
               fontSize: 18.0,
               fontWeight: FontWeight.bold),
