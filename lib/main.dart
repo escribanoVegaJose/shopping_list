@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_list/MainScreens/login/loginScreen.dart';
 import 'package:shopping_list/MainScreens/login/welcomeScreen.dart';
 import 'package:shopping_list/Utils/AssetsImages.dart';
 import 'package:shopping_list/Utils/ConstantsApp.dart';
@@ -7,6 +8,9 @@ import 'package:shopping_list/Utils/TextApp.dart';
 import 'package:shopping_list/Widgets/Design/DesignWidgets.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'dart:developer' as developer;
+
+import 'MainScreens/homeScreen.dart';
+import 'Utils/LoginGoogleUtils.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,7 +60,30 @@ class _MyHomePageState extends State<MyHomePage> {
               // exit(0);
             } else if (snapshot.connectionState == ConnectionState.done) {
               developer.log(TAG + ", Firebase init. DONE");
-
+              LoginGoogleUtils().googleSignIn.isSignedIn().then((value) {
+                //a pulir!!!
+                if (value != null) {
+                  if (value) {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomeScreen();
+                        },
+                      ),
+                    );
+                  } else {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  }
+                } else {
+                  developer.log("loginScreen-build()ERROR user viene nulo");
+                }
+              });
               //done
               return SplashScreen(
                 seconds: ConstantsAPP.TIME_SPLASH_SCREEN,

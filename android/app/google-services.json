@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "1071289554975",
-    "firebase_url": "https://shoppinglistflutter.firebaseio.com",
-    "project_id": "shoppinglistflutter",
-    "storage_bucket": "shoppinglistflutter.appspot.com"
+    "project_number": "264865524065",
+    "firebase_url": "https://flutter-example-be798.firebaseio.com",
+    "project_id": "flutter-example-be798",
+    "storage_bucket": "flutter-example-be798.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1071289554975:android:8d7988a2ee905a3543dd2a",
+        "mobilesdk_app_id": "1:264865524065:android:bb10f26f5639ef1c4efd20",
         "android_client_info": {
           "package_name": "com.example.shopping_list"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1071289554975-g1pbfa2ncpi04oordh56g0gv3rdon08u.apps.googleusercontent.com",
+          "client_id": "264865524065-2i09onq78p5sc8plqk9egm1973pv62up.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shopping_list",
+            "certificate_hash": "02e5e6d5a975693ec967089d2bc4821967050535"
+          }
+        },
+        {
+          "client_id": "264865524065-25e2qsi3490kvoogskoesu3v0o4v0asi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCi-7kx06vN-XCOCGMalh_Q4s9tSacpj0g"
+          "current_key": "AIzaSyDEdhDWR8-Wirq3l_m6eM6eNvDFfSCNXUo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1071289554975-g1pbfa2ncpi04oordh56g0gv3rdon08u.apps.googleusercontent.com",
+              "client_id": "264865524065-25e2qsi3490kvoogskoesu3v0o4v0asi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
