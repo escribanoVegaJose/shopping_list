@@ -7,6 +7,7 @@ class LoginGoogleUtils {
   static const String TAG = "LoginGoogleUtils";
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
+
   //GOOGLE METHODS
   //signInWithGoogle
   Future<User> signInWithGoogle() async {
@@ -53,5 +54,14 @@ class LoginGoogleUtils {
     await googleSignIn.signOut();
 
     log(TAG + ", User Signed Out, Google.");
+  }
+
+//getUserGoogle
+  GoogleSignInAccount getUserGoogle() {
+    try {
+      return googleSignIn.currentUser;
+    } catch (error) {
+      throw Exception("Algo ha ido mal recuperando googleSignIn.currentUser");
+    }
   }
 }

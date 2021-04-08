@@ -16,17 +16,15 @@ _drawerHome(BuildContext context) {
       children: [
         //Drawer
         DrawerHeader(
-          decoration: BoxDecoration(
-            gradient: DesignWidgets.linearGradientMain(context),
-          ),
-          child: Text(
-            'Nombre de usuario',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
+            decoration: BoxDecoration(
+              gradient: DesignWidgets.linearGradientMain(context),
             ),
-          ),
-        ),
+            child: CircleAvatar(
+                radius: 10,
+                child: Image(
+                  image: NetworkImage(
+                      LoginGoogleUtils().getUserGoogle().photoUrl.toString()),
+                ))),
         //cerrar sesión
         ListTile(
           onTap: () => {
